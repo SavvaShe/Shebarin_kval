@@ -19,13 +19,14 @@ using System.Data.SqlClient;
     InitializeComponent();
     SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
     builder.DataSource = @"DESKTOP-C848VBU\SQLEXPRESS";
-            builder.InitialCatalog = "PAVILIONS";
-            builder.IntegratedSecurity = true;
+            builder.InitialCatalog = "PAVILIONS";         
             Manager.connection = new SqlConnection(builder.ConnectionString);
     MainFrame.Navigate(new Table1());
             Manager.MainFrame = MainFrame;
+
 переход
             Manager.MainFrame.Navigate(new Table3())
+
 добавление
             if (Userlogin.Text.Length =""){}
              else
@@ -35,6 +36,7 @@ using System.Data.SqlClient;
         ClassBook.connection.Open();
         string registration = "insert into Client VALUES(@name_value, @email_value, @pass_value )";
         SqlCommand cmd = new SqlCommand(registration, ClassBook.connection);
+       
         Удаление
                 try
         {
@@ -50,6 +52,7 @@ using System.Data.SqlClient;
         { Notify.Content = "Невозможно удалить павильон"; }
         Manager.connection.Close();
     }
+
 Редактирование
                        Manager.connection.Open();
     string registration = "UPDATE Pavilions SET id_shop_center = @Number_SC_value,";
@@ -76,3 +79,7 @@ using System.Data.SqlClient;
     SqlCommand cmd = new SqlCommand(registration, Manager.connection);
 }
 }
+create login ffff with password = 'asdasd'
+go
+create user ssss for login  ffff
+ 
